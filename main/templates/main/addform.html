@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Todo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+  
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/js/mdb.min.js"></script>
+
+<style>
+    .hunwidth{
+        width:100%;
+    }
+
+</style>
+</head>
+<body>
+
+        <nav class="navbar navbar-dark primary-color">
+
+                <div class="mx-auto">
+    
+                        <a class="navbar-brand "  href="{% url 'main:index' %}">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Microsoft_To-Do_icon.png" height="30" alt="mdb logo">
+                            Todo-List
+                            </a>
+                   
+                              
+                              
+                </div>
+                
+             
+    
+                  </nav>
+
+                  <br>
+                  <br>
+                  <div class="container">
+         <div class="row">
+             <div class="col-xl-3 col-xs-12"></div>
+             <div class="col-xl-6 col-xs-12">
+
+                <div class="card">
+                       
+                    <div class="card-body card-body-cascade ">
+                        <div class="text-center">
+                            <h4 class="card-title"><strong>Add New Todo</strong></h4>
+                        </div>
+                            <br>
+
+                            <form method="POST" action="">
+                                    {% csrf_token %}
+                            
+                                    {{form|crispy }}
+                                    <br>
+                                    <br>
+                                    <button type="submit" class="btn  btn-warning" style="width:100% ;color: #FFA000; border-radius: 30px;"><strong style="font-size:18px;">SAVE</strong></button>
+                                </form>
+
+                    </div>
+                </div>
+             </div>
+             <div class="col-xl-3 col-xs-12"></div>
+         </div>
+        </div>         
+    
+</body>
+
+</html>
